@@ -3,4 +3,3 @@
 #define PERMISSIVE_HOLD
 #define CHORDAL_HOLD
 #define SPECULATIVE_HOLD
-#define RETRO_TAPPING
