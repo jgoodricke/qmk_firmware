@@ -34,6 +34,15 @@ enum layers{
 #define HOME_L      RALT_T(KC_L)
 #define HOME_SCLN   RCTL_T(KC_SCLN)
 
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT_91_ansi(
+    'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
+    'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R', 'R',       'R',
+    'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R', 'R',       'R',
+    'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R',       'R',       'R',
+    'L', 'L',       'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R',       'R',  'R',
+    'L', 'L', 'L', 'L', 'L',       'L',                  'R',       'R', 'R', 'R', 'R', 'R', 'R'
+);
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MAC_BASE] = LAYOUT_91_ansi(
         KC_MUTE,  KC_ESC,   KC_BRID,  KC_BRIU,  KC_MCTL,  KC_LPAD,  RM_VALD,   RM_VALU,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,  KC_INS,   KC_DEL,   KC_MUTE,
