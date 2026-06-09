@@ -35,11 +35,7 @@ enum layers{
 #define HOME_K      RSFT_T(KC_K)
 #define HOME_L      RALT_T(KC_L)
 #define HOME_SCLN   RCTL_T(KC_SCLN)
-#define NAV_G       LT(NAV, KC_G)
-#define NAV_H       LT(NAV, KC_H)
-
-// If rolling from G/H into NAV keys feels unreliable, prefer a per-key
-// HOLD_ON_OTHER_KEY_PRESS_PER_KEY or PERMISSIVE_HOLD_PER_KEY override for NAV_G/NAV_H only.
+#define NAV_SPC     LT(NAV, KC_SPC)
 
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT_91_ansi(
     'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
@@ -71,9 +67,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_MUTE,  KC_ESC,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,     KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,     KC_F12,   KC_INS,   KC_DEL,   KC_MUTE,
         KC_M1,    KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,      KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_PGUP,
         _______,  KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,  KC_BSLS,            KC_PGDN,
-        _______,  KC_ENT,   HOME_A,   HOME_S,   HOME_D,   HOME_F,    NAV_G,    NAV_H,    HOME_J,    HOME_K,  HOME_L,  HOME_SCLN, KC_QUOT,              KC_ENT,             KC_HOME,
+        _______,  KC_ENT,   HOME_A,   HOME_S,   HOME_D,   HOME_F,    KC_G,     KC_H,     HOME_J,    HOME_K,  HOME_L,  HOME_SCLN, KC_QUOT,              KC_ENT,             KC_HOME,
         _______,  KC_LSFT,            KC_Z,     KC_X,     KC_C,     KC_V,      KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,
-        _______,  KC_LCTL,  KC_LWIN,  KC_LALT,  MO(WIN_FN),         KC_SPC,                        KC_SPC,             KC_RALT,  MO(WIN_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
+        _______,  KC_LCTL,  KC_LWIN,  KC_LALT,  MO(WIN_FN),         NAV_SPC,                       NAV_SPC,            KC_RALT,  MO(WIN_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
 
     [WIN_FN] = LAYOUT_91_ansi(
         RM_TOGG,  _______,  KC_BRID,  KC_BRIU,  KC_TASK,  KC_FLXP,  RM_VALD,   RM_VALU,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,  _______,  _______,  RM_TOGG,
@@ -85,11 +81,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [NAV] = LAYOUT_91_ansi(
         _______,  _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,  _______,  _______,
-        _______,  _______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,     KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,     KC_F12,   _______,            _______,
-        _______,  KC_DEL,   _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,            _______,
+        _______,  KC_DEL,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,     KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,     KC_F12,   _______,            _______,
+        _______,  KC_BSPC,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,            _______,
         _______,  KC_ESC,   _______,  _______,  _______,  _______,  _______,   KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  _______,  KC_GRV,                _______,            _______,
         _______,  _______,            _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,  KC_BSLS,              _______,  _______,
-        _______,  _______,  _______,  _______,  _______,            KC_BSPC,                        KC_BSPC,            _______,  _______,    _______,  _______,  _______,  _______),
+        _______,  _______,  _______,  _______,  _______,            LALT(KC_TAB),                   LALT(KC_TAB),       _______,  _______,    _______,  _______,  _______,  _______),
 };
 
 #if defined(ENCODER_MAP_ENABLE)
